@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"3e048a051e","applicationID":"151456144","transactionName":"NVVWNkFWXEZUVBEMXgwfeTRwGHZQQVYMCXINXkAQXFteUEcYLAtVB0g=","queueTime":2,"applicationTime":1768,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"3e048a051e",applicationID:"151456144"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+    <script>
+        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-56016222-5', 'auto'); ga('send', 'pageview');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>5 mẫu điện thoại samsung m&#224;u hồng cảm ứng thời trang gi&#225; từ 5tr - Blog Adayroi</title>
+    <meta property="fb:app_id" content="939777419366417" />
+    <meta property="fb:pages" content="939777419366417" />
+    <!-- CODELAB: Add link rel manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <!-- CODELAB: Add iOS meta tags and icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Blog Adayroi">
+    <link rel="apple-touch-icon" href="/images/icons/favicon-512.png">
+    <!-- CODELAB: Add meta theme-color -->
+    <meta name="theme-color" content="#536878" />
+    <!-- CODELAB: Add description here -->
+    
+    
+        <meta name="description" content="Top 5 điện thoại Samsung m&#224;u hồng cực hot với thiết kế đẹp mắt, cấu h&#236;nh mạnh mẽ, chất lượng h&#236;nh ảnh tuyệt đỉnh được hội chị em săn l&#249;ng nhiệt t&#236;nh." />
+        <meta name="keywords" content="điện thoại samsung m&#224;u hồng,samsung galaxy note 10" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="5 mẫu điện thoại samsung m&#224;u hồng cảm ứng thời trang gi&#225; từ 5tr - Blog Adayroi" />
+        <meta property="og:description" content="Top 5 điện thoại Samsung m&#224;u hồng cực hot với thiết kế đẹp mắt, cấu h&#236;nh mạnh mẽ, chất lượng h&#236;nh ảnh tuyệt đỉnh được hội chị em săn l&#249;ng nhiệt t&#236;nh." />
+        <meta property="og:image" content="https://cdn02.static-adayroi.com/0/2019/07/15/1563178316768_1022341.jpg" />
+        <meta property="og:url" content="https://blog.adayroi.com/5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr-d12635" />
+    <link rel="canonical" href="https://blog.adayroi.com/5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr-d12635" />
+
+    <style>
+        .txt_tag {
+            display: inline-block;
+            background: #f1f1f1 url(/Content/assets/images/bg_icon_tag.gif) no-repeat left top;
+            padding: 0 10px 0 20px;
+            height: 20px;
+            color: #939393;
+            font: 400 11px/20px arial;
+            margin: 0 1px 0 0
+        }
+
+        a.block_tag {
+            display: inline-block;
+            height: 20px;
+            font: 400 11px/20px arial;
+            color: #656565;
+            padding: 0 10px;
+            white-space: nowrap;
+            background: #f1f1f1;
+            margin: 5px 2px 0 0
+        }
+
+            a.block_tag:hover {
+                color: #656565;
+                text-decoration: none;
+                background-color: #e2e2e2
+            }
+    </style>
+
+    <link rel="icon" href="/Content/assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/Content/css/style.css?v=5454656" />
+    <link rel="stylesheet" href="/Content/css/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/Content/polish-version-adayroi.css" />
+
+
+    <!-- Google Tag Manager -->
+    <script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MR5LCNG');</script>
+    <!-- End Google Tag Manager -->
+
+    <script async src="//adayroi.api.useinsider.com/ins.js?id=10001810"></script>
+    <script>
+        var FBAppID = '939777419366417';
+
+        function validateForm() {
+            var x = document.forms["formSearch"]["keysearch"].value;
+            if (x == null || x == "") {
+                return false;
+            }
+            else {
+                if (!validateInputNotAllowHtmlTags(x)) {
+                    alert("Từ khóa không được chứa các ký tự html (< hoặc >).");
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function validateInputNotAllowHtmlTags(strValue) {
+            if (strValue === undefined || strValue === "")
+                return true;
+            var htmlQuoteRegex = /^[^<>]+$/;
+            if (!htmlQuoteRegex.test(strValue)) {
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <style>
+        .desktop input {
+            display: block;
+        }
+
+        @media (max-width: 991px) {
+            .desktop input {
+                display: none;
+            }
+
+            .mobile {
+                display: block;
+                position: absolute;
+                top: 52px;
+                display: flex;
+                width: calc(100% - 34px);
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .adr-page-blog-details .main-content .main-blog .blog-content .blog-content-text table {
+                max-width: 390px !important;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            .adr-page-blog-details .main-content .main-blog .blog-content .blog-content-text table {
+                max-width: 680px !important;
+            }
+        }
+
+        @media only screen and (min-width: 1023px) {
+            .adr-page-blog-details .main-content .main-blog .blog-content .blog-content-text table {
+                max-width: 870px !important;
+            }
+        }
+    </style>
+</head>
+<body class="adr-page-blog-details">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MR5LCNG"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="fb-root"></div>
+    <!-- Start Facebook Javascript SDK-->
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=749384515190849";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    <!-- End Facebook Javascript SDK-->
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul>
+                        <li>
+                            <a href="/vingroup-c65" title="Vingroup"><i class="menu-icon" style="background:#000000">v</i> Vingroup</a>
+                                <span class="menu-mobile-toggle"></span>
+                                <ul>
+                                        <li>
+                                            <a href="/vineco-c75" title="VinEco">VinEco</a>
+                                        </li>
+                                        <li>
+                                            <a href="/vinsmart-c70" title="VinSmart">VinSmart</a>
+                                        </li>
+                                        <li>
+                                            <a href="/vinfast-c66" title="VinFast">VinFast</a>
+                                        </li>
+                                        <li>
+                                            <a href="/vinmart-c67" title="VinMart">VinMart</a>
+                                        </li>
+                                        <li>
+                                            <a href="/vinhomes-c68" title="Vinhomes">Vinhomes</a>
+                                        </li>
+                                        <li>
+                                            <a href="/vinmec-c64" title="Vinmec">Vinmec</a>
+                                        </li>
+                                        <li>
+                                            <a href="/vinpearl-c46" title="Vinpearl">Vinpearl</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li>
+                            <a href="/su-kien-c1" title="Sự kiện"><i class="menu-icon" style="background:#4e916d">s</i> Sự kiện</a>
+                                <span class="menu-mobile-toggle"></span>
+                                <ul>
+                                        <li>
+                                            <a href="/su-kien-c10" title="Sự Kiện">Sự Kiện</a>
+                                        </li>
+                                        <li>
+                                            <a href="/qua-tang-c11" title="Qu&#224; Tặng">Qu&#224; Tặng</a>
+                                        </li>
+                                        <li>
+                                            <a href="/vui-choi-le-c12" title="Vui Chơi Lễ">Vui Chơi Lễ</a>
+                                        </li>
+                                        <li>
+                                            <a href="/khuyen-mai-tu-adayroi-c44" title="Khuyến m&#227;i từ Adayroi">Khuyến m&#227;i từ Adayroi</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li>
+                            <a href="/cong-nghe-c9" title="C&#244;ng Nghệ"><i class="menu-icon" style="background:#9f6ce0">c</i> C&#244;ng Nghệ</a>
+                                <span class="menu-mobile-toggle"></span>
+                                <ul>
+                                        <li>
+                                            <a href="/laptop-c35" title="Laptop">Laptop</a>
+                                        </li>
+                                        <li>
+                                            <a href="/dien-thoai-c33" title="Điện Thoại">Điện Thoại</a>
+                                        </li>
+                                        <li>
+                                            <a href="/may-tinh-bang-c34" title="M&#225;y T&#237;nh bảng">M&#225;y T&#237;nh bảng</a>
+                                        </li>
+                                        <li>
+                                            <a href="/phu-kien-dien-tu-c37" title="Phụ kiện điện tử">Phụ kiện điện tử</a>
+                                        </li>
+                                        <li>
+                                            <a href="/thiet-bi-ky-thuat-so-c36" title="Thiết bị kỹ thuật số">Thiết bị kỹ thuật số</a>
+                                        </li>
+                                        <li>
+                                            <a href="/thu-thuat-cong-nghe-c38" title="Thủ thuật c&#244;ng nghệ">Thủ thuật c&#244;ng nghệ</a>
+                                        </li>
+                                        <li>
+                                            <a href="/thiet-bi-dien-gia-dung-c45" title="Thiết bị điện gia dụng">Thiết bị điện gia dụng</a>
+                                        </li>
+                                        <li>
+                                            <a href="/thiet-bi-cham-soc-suc-khoe-c72" title="Thiết bị chăm s&#243;c sức khỏe">Thiết bị chăm s&#243;c sức khỏe</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li>
+                            <a href="/lam-dep-c7" title="L&#224;m Đẹp"><i class="menu-icon" style="background:#cc8383">l</i> L&#224;m Đẹp</a>
+                                <span class="menu-mobile-toggle"></span>
+                                <ul>
+                                        <li>
+                                            <a href="/thoi-trang-c24" title="Thời trang">Thời trang</a>
+                                        </li>
+                                        <li>
+                                            <a href="/cham-soc-da-c25" title="Chăm s&#243;c da">Chăm s&#243;c da</a>
+                                        </li>
+                                        <li>
+                                            <a href="/trang-diem-c26" title="Trang Điểm">Trang Điểm</a>
+                                        </li>
+                                        <li>
+                                            <a href="/toc-nail-c27" title="T&#243;c &amp; Nail">T&#243;c &amp; Nail</a>
+                                        </li>
+                                        <li>
+                                            <a href="/bi-quyet-khoe-va-dep-c28" title="B&#237; quyết khỏe v&#224; đẹp">B&#237; quyết khỏe v&#224; đẹp</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li>
+                            <a href="/doi-song-c2" title="Đời Sống"><i class="menu-icon" style="background:#5d73e3">d</i> Đời Sống</a>
+                                <span class="menu-mobile-toggle"></span>
+                                <ul>
+                                        <li>
+                                            <a href="/xe-c17" title="XE">XE</a>
+                                        </li>
+                                        <li>
+                                            <a href="/the-thao-c18" title="Thể Thao">Thể Thao</a>
+                                        </li>
+                                        <li>
+                                            <a href="/nha-dat-c71" title="Nh&#224; đất">Nh&#224; đất</a>
+                                        </li>
+                                        <li>
+                                            <a href="/phong-thuy-c15" title="Phong Thủy">Phong Thủy</a>
+                                        </li>
+                                        <li>
+                                            <a href="/trang-tri-noi-that-c14" title="Trang tr&#237; nội thất">Trang tr&#237; nội thất</a>
+                                        </li>
+                                        <li>
+                                            <a href="/cham-soc-nha-cua-c13" title="Chăm s&#243;c nh&#224; cửa">Chăm s&#243;c nh&#224; cửa</a>
+                                        </li>
+                                        <li>
+                                            <a href="/van-phong-pham-qua-tang-c16" title="Văn ph&#242;ng phẩm - Qu&#224; tặng">Văn ph&#242;ng phẩm - Qu&#224; tặng</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li>
+                            <a href="/du-lich-c3" title="Du Lịch"><i class="menu-icon" style="background:#d69356">d</i> Du Lịch</a>
+                                <span class="menu-mobile-toggle"></span>
+                                <ul>
+                                        <li>
+                                            <a href="/kinh-nghiem-du-lich-c5" title="Kinh nghiệm Du lịch">Kinh nghiệm Du lịch</a>
+                                        </li>
+                                        <li>
+                                            <a href="/diem-den-trong-nuoc-c6" title="Điểm Đến Trong Nước">Điểm Đến Trong Nước</a>
+                                        </li>
+                                        <li>
+                                            <a href="/diem-den-nuoc-ngoai-c19" title="Điểm Đến Nước Ngo&#224;i">Điểm Đến Nước Ngo&#224;i</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li>
+                            <a href="/am-thuc-c4" title="Ẩm Thực"><i class="menu-icon" style="background:#a1ab2c">a</i> Ẩm Thực</a>
+                                <span class="menu-mobile-toggle"></span>
+                                <ul>
+                                        <li>
+                                            <a href="/mon-ngon-c20" title="M&#243;n ngon">M&#243;n ngon</a>
+                                        </li>
+                                        <li>
+                                            <a href="/thuc-pham-c21" title="Thực Phẩm">Thực Phẩm</a>
+                                        </li>
+                                        <li>
+                                            <a href="/dia-diem-c22" title="Địa Điểm">Địa Điểm</a>
+                                        </li>
+                                        <li>
+                                            <a href="/day-nau-an-c23" title="Dạy Nấu Ăn">Dạy Nấu Ăn</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li>
+                            <a href="/me-be-c8" title="Mẹ B&#233;"><i class="menu-icon" style="background:#83c3cc">m</i> Mẹ B&#233;</a>
+                                <span class="menu-mobile-toggle"></span>
+                                <ul>
+                                        <li>
+                                            <a href="/cham-soc-sau-sinh-c74" title="CHĂM S&#211;C SAU SINH">CHĂM S&#211;C SAU SINH</a>
+                                        </li>
+                                        <li>
+                                            <a href="/cham-soc-ba-bau-c58" title="Chăm s&#243;c b&#224; bầu">Chăm s&#243;c b&#224; bầu</a>
+                                        </li>
+                                        <li>
+                                            <a href="/cham-soc-be-c29" title="Chăm S&#243;c B&#233;">Chăm S&#243;c B&#233;</a>
+                                        </li>
+                                        <li>
+                                            <a href="/dinh-duong-ba-bau-c31" title="Dinh dưỡng b&#224; bầu">Dinh dưỡng b&#224; bầu</a>
+                                        </li>
+                                        <li>
+                                            <a href="/dinh-duong-cho-be-c32" title="Dinh Dưỡng Cho B&#233;">Dinh Dưỡng Cho B&#233;</a>
+                                        </li>
+                                        <li>
+                                            <a href="/su-phat-trien-thai-nhi-c73" title="Sự ph&#225;t triển thai nhi">Sự ph&#225;t triển thai nhi</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li>
+                            <a href="/suc-khoe-c47" title="Sức khỏe"><i class="menu-icon" style="background:#000000">s</i> Sức khỏe</a>
+                                <span class="menu-mobile-toggle"></span>
+                                <ul>
+                                        <li>
+                                            <a href="/suc-khoe-tam-ly-c79" title="Sức khỏe t&#226;m l&#253;">Sức khỏe t&#226;m l&#253;</a>
+                                        </li>
+                                        <li>
+                                            <a href="/bao-hiem-c77" title="Bảo hiểm">Bảo hiểm</a>
+                                        </li>
+                                        <li>
+                                            <a href="/cong-nghe-y-khoa-c76" title="C&#244;ng nghệ y khoa">C&#244;ng nghệ y khoa</a>
+                                        </li>
+                                        <li>
+                                            <a href="/kien-thuc-ung-thu-c78" title="Kiến thức ung thư">Kiến thức ung thư</a>
+                                        </li>
+                                        <li>
+                                            <a href="/cham-soc-suc-khoe-c48" title="Chăm s&#243;c sức khỏe">Chăm s&#243;c sức khỏe</a>
+                                        </li>
+                                </ul>
+                        </li>
+            </ul>
+        </div>
+        <div id="page-content-wrapper">
+            <div class="header">
+                <div class="container">
+                    <a href="#menu-toggle" id="menu_toggle"></a>
+                    <div class="logo">
+                        
+                        <a href="/" title="Blog Adayroi.com" class="logo-blog">
+                            <img src="/Content/assets/images/blog_logo.png">
+                        </a>
+                        <div class="input-group padding-8 desktop">
+                            <input type="text" name="q" class="form-control box-search" placeholder="Bạn muốn tìm...">
+                            <span class="input-group-btn">
+                                <button type="button" name="search" id="search-btn" class="btn btn-flat bt-search">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="menu-top">
+                        <ul>
+                                    <li>
+                                        <a href="/vingroup-c65" title="Vingroup">Vingroup</a>
+
+                                            <ul>
+                                                    <li>
+                                                        <a href="/vineco-c75" title="VinEco">VinEco</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/vinsmart-c70" title="VinSmart">VinSmart</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/vinfast-c66" title="VinFast">VinFast</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/vinmart-c67" title="VinMart">VinMart</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/vinhomes-c68" title="Vinhomes">Vinhomes</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/vinmec-c64" title="Vinmec">Vinmec</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/vinpearl-c46" title="Vinpearl">Vinpearl</a>
+                                                    </li>
+                                            </ul>
+
+                                    </li>
+                                    <li>
+                                        <a href="/su-kien-c1" title="Sự kiện">Sự kiện</a>
+
+                                            <ul>
+                                                    <li>
+                                                        <a href="/su-kien-c10" title="Sự Kiện">Sự Kiện</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/qua-tang-c11" title="Qu&#224; Tặng">Qu&#224; Tặng</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/vui-choi-le-c12" title="Vui Chơi Lễ">Vui Chơi Lễ</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/khuyen-mai-tu-adayroi-c44" title="Khuyến m&#227;i từ Adayroi">Khuyến m&#227;i từ Adayroi</a>
+                                                    </li>
+                                            </ul>
+
+                                    </li>
+                                    <li>
+                                        <a href="/cong-nghe-c9" title="C&#244;ng Nghệ">C&#244;ng Nghệ</a>
+
+                                            <ul>
+                                                    <li>
+                                                        <a href="/laptop-c35" title="Laptop">Laptop</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/dien-thoai-c33" title="Điện Thoại">Điện Thoại</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/may-tinh-bang-c34" title="M&#225;y T&#237;nh bảng">M&#225;y T&#237;nh bảng</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/phu-kien-dien-tu-c37" title="Phụ kiện điện tử">Phụ kiện điện tử</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/thiet-bi-ky-thuat-so-c36" title="Thiết bị kỹ thuật số">Thiết bị kỹ thuật số</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/thu-thuat-cong-nghe-c38" title="Thủ thuật c&#244;ng nghệ">Thủ thuật c&#244;ng nghệ</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/thiet-bi-dien-gia-dung-c45" title="Thiết bị điện gia dụng">Thiết bị điện gia dụng</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/thiet-bi-cham-soc-suc-khoe-c72" title="Thiết bị chăm s&#243;c sức khỏe">Thiết bị chăm s&#243;c sức khỏe</a>
+                                                    </li>
+                                            </ul>
+
+                                    </li>
+                                    <li>
+                                        <a href="/lam-dep-c7" title="L&#224;m Đẹp">L&#224;m Đẹp</a>
+
+                                            <ul>
+                                                    <li>
+                                                        <a href="/thoi-trang-c24" title="Thời trang">Thời trang</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/cham-soc-da-c25" title="Chăm s&#243;c da">Chăm s&#243;c da</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/trang-diem-c26" title="Trang Điểm">Trang Điểm</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/toc-nail-c27" title="T&#243;c &amp; Nail">T&#243;c &amp; Nail</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/bi-quyet-khoe-va-dep-c28" title="B&#237; quyết khỏe v&#224; đẹp">B&#237; quyết khỏe v&#224; đẹp</a>
+                                                    </li>
+                                            </ul>
+
+                                    </li>
+                                    <li>
+                                        <a href="/doi-song-c2" title="Đời Sống">Đời Sống</a>
+
+                                            <ul>
+                                                    <li>
+                                                        <a href="/xe-c17" title="XE">XE</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/the-thao-c18" title="Thể Thao">Thể Thao</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/nha-dat-c71" title="Nh&#224; đất">Nh&#224; đất</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/phong-thuy-c15" title="Phong Thủy">Phong Thủy</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/trang-tri-noi-that-c14" title="Trang tr&#237; nội thất">Trang tr&#237; nội thất</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/cham-soc-nha-cua-c13" title="Chăm s&#243;c nh&#224; cửa">Chăm s&#243;c nh&#224; cửa</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/van-phong-pham-qua-tang-c16" title="Văn ph&#242;ng phẩm - Qu&#224; tặng">Văn ph&#242;ng phẩm - Qu&#224; tặng</a>
+                                                    </li>
+                                            </ul>
+
+                                    </li>
+                                    <li>
+                                        <a href="/du-lich-c3" title="Du Lịch">Du Lịch</a>
+
+                                            <ul>
+                                                    <li>
+                                                        <a href="/kinh-nghiem-du-lich-c5" title="Kinh nghiệm Du lịch">Kinh nghiệm Du lịch</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/diem-den-trong-nuoc-c6" title="Điểm Đến Trong Nước">Điểm Đến Trong Nước</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/diem-den-nuoc-ngoai-c19" title="Điểm Đến Nước Ngo&#224;i">Điểm Đến Nước Ngo&#224;i</a>
+                                                    </li>
+                                            </ul>
+
+                                    </li>
+                                    <li>
+                                        <a href="/am-thuc-c4" title="Ẩm Thực">Ẩm Thực</a>
+
+                                            <ul>
+                                                    <li>
+                                                        <a href="/mon-ngon-c20" title="M&#243;n ngon">M&#243;n ngon</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/thuc-pham-c21" title="Thực Phẩm">Thực Phẩm</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/dia-diem-c22" title="Địa Điểm">Địa Điểm</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/day-nau-an-c23" title="Dạy Nấu Ăn">Dạy Nấu Ăn</a>
+                                                    </li>
+                                            </ul>
+
+                                    </li>
+                                    <li>
+                                        <a href="/me-be-c8" title="Mẹ B&#233;">Mẹ B&#233;</a>
+
+                                            <ul>
+                                                    <li>
+                                                        <a href="/cham-soc-sau-sinh-c74" title="CHĂM S&#211;C SAU SINH">CHĂM S&#211;C SAU SINH</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/cham-soc-ba-bau-c58" title="Chăm s&#243;c b&#224; bầu">Chăm s&#243;c b&#224; bầu</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/cham-soc-be-c29" title="Chăm S&#243;c B&#233;">Chăm S&#243;c B&#233;</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/dinh-duong-ba-bau-c31" title="Dinh dưỡng b&#224; bầu">Dinh dưỡng b&#224; bầu</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/dinh-duong-cho-be-c32" title="Dinh Dưỡng Cho B&#233;">Dinh Dưỡng Cho B&#233;</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/su-phat-trien-thai-nhi-c73" title="Sự ph&#225;t triển thai nhi">Sự ph&#225;t triển thai nhi</a>
+                                                    </li>
+                                            </ul>
+
+                                    </li>
+                                    <li>
+                                        <a href="/suc-khoe-c47" title="Sức khỏe">Sức khỏe</a>
+
+                                            <ul>
+                                                    <li>
+                                                        <a href="/suc-khoe-tam-ly-c79" title="Sức khỏe t&#226;m l&#253;">Sức khỏe t&#226;m l&#253;</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/bao-hiem-c77" title="Bảo hiểm">Bảo hiểm</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/cong-nghe-y-khoa-c76" title="C&#244;ng nghệ y khoa">C&#244;ng nghệ y khoa</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/kien-thuc-ung-thu-c78" title="Kiến thức ung thư">Kiến thức ung thư</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/cham-soc-suc-khoe-c48" title="Chăm s&#243;c sức khỏe">Chăm s&#243;c sức khỏe</a>
+                                                    </li>
+                                            </ul>
+
+                                    </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="input-group padding-8 mobile">
+                    <input type="text" name="q" class="form-control box-search" placeholder="Bạn muốn tìm...">
+                    <span class="input-group-btn">
+                        <button type="button" name="search" id="search-btn" class="btn btn-flat bt-search">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="container">
+                    
+
+
+
+<script type="text/javascript">
+            var postId          = 12635
+            var categoryADRId = '325';
+            var categoryADRTitle = 'XEM TH&#202;M C&#193;C SẢN PHẨM ĐIỆN THOẠI SAMSUNG ĐANG KHUYẾN M&#195;I TẠI ADAYROI';
+</script>
+
+        <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="/">
+                    <p itemprop="name">Blog</p>
+                </a>
+                <meta itemprop="position" content="1" />
+            </li>
+
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="/cong-nghe-c9">
+                        <p itemprop="name">C&#244;ng Nghệ</p>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="/dien-thoai-c33">
+                        <p itemprop="name">Điện Thoại</p>
+                    </a>
+                    <meta itemprop="position" content="3" />
+                </li>
+                            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="active">
+                    <p itemprop="name">5 mẫu điện thoại samsung m&#224;u hồng cảm ứng thời trang gi&#225; từ 5tr</p>
+                    <meta itemprop="position" content="4" />
+                </li>
+        </ol>
+
+
+
+
+
+    <div class="main-blog">
+            <div class="blog-content">
+                    <h1 class="title">5 mẫu điện thoại samsung m&#224;u hồng cảm ứng thời trang gi&#225; từ 5tr</h1>
+                    <div class="time-post">
+                        <i class="icon clock"></i>
+                        <span>
+                            15/07/2019 15:08
+                        </span>
+
+                    </div>
+                    <div class="blog-content-text">
+                        <strong>
+                            Điện thoại Samsung màu hồng đang được các nàng bánh bèo rất yêu thích và săn lùng nhằm tạo điểm nhấn nổi bật trong phong cách thời trang cũng như phục vụ cho nhu cầu liên lạc – giải trí. Cùng cập nhật những mẫu điện thoại cảm ứng màu hồng hot hit với ngoại hình sang chảnh, tính năng hiện đại nhé!
+                        </strong>
+                        <!-- Nội dung -->
+                        <h2 style="text-align:justify"><strong>1. Top 5 điện thoại Samsung m&agrave;u hồng hot nhất hiện nay</strong></h2>
+
+<h3 style="text-align:justify"><strong>1.1. Samsung Galaxy Note 10 phi&ecirc;n bản m&agrave;u hồng</strong></h3>
+
+<p style="text-align:justify">Tuy chưa ch&iacute;nh thức ra mắt nhưng những th&ocirc;ng tin về<strong><a href="https://www.adayroi.com/samsung-galaxy-note10-256gb-den-hang-chinh-hang-p-2950525?utm_source=blog_article&utm_medium=referral&utm_campaign=d12635&utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" target="_blank">Samsung Galaxy Note 10 c&oacute; 6 phi&ecirc;n bản m&agrave;u mới lạ</a></strong>, trong đ&oacute; c&oacute; m&agrave;u hồng đ&atilde; nhanh ch&oacute;ng khiến c&aacute;c chị em rục rịch rủ nhau săn đ&oacute;n nhiệt t&igrave;nh.&nbsp;</p>
+
+<p style="text-align:justify">Với thiết kế sang trọng, tinh tế, hiệu năng mạnh mẽ, khả năng chụp ảnh si&ecirc;u đỉnh cao, Note 10 hứa hẹn sẽ đem lại những trải nghiệm cực kỳ tuyệt vời. Về gi&aacute; th&agrave;nh, mẫu điện thoại cảm ứng m&agrave;u hồng n&agrave;y c&oacute; gi&aacute; khoảng <strong>25.600.000 đồng.</strong></p>
+
+<p style="text-align:justify"><img alt="Samsung Galaxy Note 10 hứa hẹn có nhiều phiên bản màu " src="https://cdn02.static-adayroi.com/0/2019/07/15/156317821824_4153426.jpg" style="width:800px" /></p>
+
+<p style="text-align:center"><em>Samsung Galaxy Note 10 hứa hẹn c&oacute; nhiều phi&ecirc;n bản m&agrave;u (Nguồn: genk.vn)</em></p>
+
+<h3 style="text-align:justify"><strong>1.2. Samsung Galaxy J4 Plus Hồng</strong></h3>
+
+<p style="text-align:justify">Dẫn đầu trong danh s&aacute;ch top 5 mẫu điện thoại Samsung m&agrave;u hồng được hội chị em cảm mến nhất, <strong><a href="https://www.adayroi.com/dien-thoai-di-dong-samsung-galaxy-j4-plus-2gb-16gb-hong-hang-chinh-hang-p-1750627?utm_source=blog_article&utm_medium=referral&utm_campaign=d12635&utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" target="_blank">điện thoại di động Samsung Galaxy J4 Plus hồng</a></strong> c&oacute; ngoại h&igrave;nh tinh tế, hợp thời trang. Ch&uacute;ng được thiết kế bằng chất liệu vỏ nhựa mềm, bo cạnh xung quanh tạo cảm gi&aacute;c cầm nắm thuận tiện, chắc tay.&nbsp;</p>
+
+<p style="text-align:justify">M&agrave;n h&igrave;nh &ocirc; cực với viền bezel mỏng nhẹ, k&iacute;ch thước 6&rsquo;&rsquo;, độ ph&acirc;n giải sắc n&eacute;t HD+ đem đến những trải nghiệm hiển thị cực &ldquo;chất&rdquo;, nhất l&agrave; c&aacute;c gam m&agrave;u tối. Kh&ocirc;ng những thế, Samsung Galaxy J4 Plus hồng c&ograve;n trang bị hệ thống camera si&ecirc;u đỉnh cao, bắt n&eacute;t cực tốt v&agrave; chip xử l&yacute; Snapdragon mạnh mẽ gi&uacute;p bạn c&oacute; những tấm ảnh chi tiết cao, t&aacute;c vụ mượt m&agrave;. Gi&aacute; của sản phẩm n&agrave;y tr&ecirc;n Adayroi l&agrave; <strong>3.490.000 đồng.</strong></p>
+
+<p style="text-align:justify"><img alt="Samsung Galaxy J4 Plus Hồng kiểu dáng tinh tế, sành điệu " src="https://cdn02.static-adayroi.com/0/2019/07/15/156317817266_8892708.jpg" style="width:800px" /></p>
+
+<p style="text-align:center"><em>Samsung Galaxy J4 Plus Hồng kiểu d&aacute;ng tinh tế, s&agrave;nh điệu (Nguồn: tgdd.vn)</em></p>
+
+<h3 style="text-align:justify"><strong>1.3. Samsung Galaxy A60 phi&ecirc;n bản m&agrave;u muối hồng</strong></h3>
+
+<p style="text-align:justify">Samsung Galaxy A60 đẹp m&ecirc; hồn với phi&ecirc;n bản muối hồng mới lạ ở xung quanh mặt lưng k&iacute;nh của thiết bị điện thoại. B&ecirc;n cạnh sự kh&aacute;c biệt về m&agrave;u sắc, cấu h&igrave;nh của ch&uacute;ng tương tự với mẫu Galaxy M40 phi&ecirc;n bản quốc tế.&nbsp;</p>
+
+<p style="text-align:justify">M&agrave;n h&igrave;nh PLS Infinity-O giọt nước bắt kịp trend cỡ 6.3 inch, chip xử l&yacute; Snapdragon 675 v&agrave; pin khủng 3.500mAh. Chiếc điện thoại n&agrave;y c&ograve;n t&iacute;ch hợp 3 cảm biến tại cụm camera sau gồm c&oacute;: camera ch&iacute;nh 32MP, g&oacute;c rộng 8MP v&agrave; đo độ s&acirc;u 5MP. Hiện nay, gi&aacute; b&aacute;n tr&ecirc;n thị trường của Galaxy A60 khoảng tr&ecirc;n <strong>5.000.000 đồng.</strong></p>
+
+<p style="text-align:justify"><img alt="Samsung Galaxy A60" src="https://cdn02.static-adayroi.com/0/2019/07/15/1563178173155_6417226.jpg" style="width:800px" /></p>
+
+<p style="text-align:center"><em>Samsung Galaxy A60 (Nguồn: viettablet.com)</em></p>
+
+<h3 style="text-align:justify"><strong>1.4. Samsung Galaxy J7 Prime hồng</strong></h3>
+
+<p style="text-align:justify">G&acirc;y ấn tượng trong l&ograve;ng người ti&ecirc;u d&ugrave;ng ngay từ lần gặp gỡ đầu ti&ecirc;n bởi sự cải tiến độc đ&aacute;o, mới mẻ trong thiết kế, <strong><a href="https://www.adayroi.com/samsung-galaxy-j7-prime-32gb-hong-hang-nhap-khau-p-PRI1124051?utm_source=blog_article&utm_medium=referral&utm_campaign=d12635&utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" target="_blank">Samsung Galaxy J7 Prime 32GB m&agrave;u hồng tinh tế</a></strong> c&oacute; ngoại h&igrave;nh nhẹ nh&agrave;ng, s&agrave;nh điệu. C&aacute;c chi tiết, đường n&eacute;t đều được xử l&yacute;, chế t&aacute;c c&ocirc;ng phu, tinh xảo kết hợp với lớp phủ &aacute;nh kim &ocirc;m trọn th&acirc;n m&aacute;y đầy m&ecirc; hoặc.&nbsp;</p>
+
+<p style="text-align:justify">Kết cấu bo tr&ograve;n, vừa vặn kh&ocirc;ng những tạo cảm gi&aacute;c mềm mại, c&aacute; t&iacute;nh m&agrave; c&ograve;n cực kỳ dễ cầm nắm. Một ưu thế nổi bật kh&ocirc;ng thể kh&ocirc;ng nhắc tới của Galaxy J7 Prime đ&oacute; ch&iacute;nh l&agrave; m&agrave;n h&igrave;nh lớn 5.5 inch hiển thị h&igrave;nh ảnh, m&agrave;u sắc ch&acirc;n thực, tự nhi&ecirc;n, camera chụp ảnh cực chuy&ecirc;n nghiệp v&agrave; bảo mật tuyệt đối nhờ dấu v&acirc;n tay. Gi&aacute; của sản phẩm n&agrave;y tầm tr&ecirc;n <strong>6.000.000 đồng.</strong></p>
+
+<p style="text-align:justify"><img alt="Samsung Galaxy J7 Prime hồng cấu hình mạnh mẽ" src="https://cdn02.static-adayroi.com/0/2019/07/15/1563178172151_1480193.jpg" style="width:800px" /></p>
+
+<p style="text-align:center"><em>Samsung Galaxy J7 Prime hồng cấu h&igrave;nh mạnh mẽ (Nguồn: giadinhvietnam.com)</em></p>
+
+<h3 style="text-align:justify"><strong>1.5. Samsung Galaxy J7 Pro</strong></h3>
+
+<p style="text-align:justify">Đ&acirc;y l&agrave; mẫu điện thoại Samsung m&agrave;u hồng thiết kế s&agrave;nh điệu bằng kim loại nguy&ecirc;n khối n&ecirc;n <strong><a href="https://www.adayroi.com/samsung-galaxy-j7-pro-3gb-32gb-hong-hang-chinh-hang-p-1343279?utm_source=blog_article&utm_medium=referral&utm_campaign=d12635&utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" target="_blank">Samsung Galaxy J7 Pro c&oacute; vẻ ngo&agrave;i ấn tượng, bắt mắt</a></strong>, ph&ugrave; hợp với c&aacute;c c&ocirc; n&agrave;ng c&oacute; gu ăn mặc thời thượng. Chiếc m&aacute;y n&agrave;y được trang bị m&agrave;n h&igrave;nh rộng 5.5&rsquo;&rsquo;, h&igrave;nh ảnh sống động, bộ đ&ocirc;i camera chụp ảnh chất lượng tốt v&agrave; bộ vi xử l&yacute; Exynos 7870 Octa gi&uacute;p cho c&aacute;c t&aacute;c vụ tr&ecirc;n m&aacute;y mượt m&agrave;, nhanh nhạy, lấy n&eacute;t cực nhanh, h&igrave;nh ảnh sắc n&eacute;t cho d&ugrave; chụp trong điều kiện thiếu s&aacute;ng.&nbsp;</p>
+
+<p style="text-align:justify">Hơn thế, nhờ sử dụng pin 3.600mAh n&ecirc;n m&aacute;y hoạt động bền bỉ, tiết kiệm pin tối ưu hỗ trợ người d&ugrave;ng trong mọi hoạt động c&ocirc;ng việc hay giải tr&iacute;. Gi&aacute; sản phẩm n&agrave;y khoảng từ<strong> 6.400.000 đồng.</strong></p>
+
+<p style="text-align:justify"><img alt="Samsung Galaxy J7 Pro" src="https://cdn02.static-adayroi.com/0/2019/07/15/1563178172132_4599949.jpg" style="width:800px" /></p>
+
+<p style="text-align:center"><em>Samsung Galaxy J7 Pro (Nguồn: fptshop.com.vn)</em></p>
+
+<h2 style="text-align:justify"><strong>2. Những mẫu điện thoại m&agrave;u hồng kh&aacute;c đẹp được ưa th&iacute;ch hiện nay</strong></h2>
+
+<h3 style="text-align:justify"><strong>2.1. Vsmart Active 1+ m&agrave;u hồng</strong></h3>
+
+<p style="text-align:justify"><strong><a href="https://www.adayroi.com/vsmart-active-1-6gb-64gb-hong-p-2188579?utm_source=blog_article&utm_medium=referral&utm_campaign=d12635&utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" target="_blank">Mẫu điện thoại Vsmart Active 1+ m&agrave;u hồng</a></strong> c&oacute; h&igrave;nh thức kh&aacute; giống iPhone XS Max với m&agrave;n h&igrave;nh tai thỏ v&agrave; cụm camera k&eacute;p ph&iacute;a sau m&aacute;y. Tuy nhi&ecirc;n, ch&uacute;ng d&agrave;y dặn hơn, cảm biến v&acirc;n tay đặt ở sau m&aacute;y c&ugrave;ng với logo thương hiệu Vsmart &ndash; C&aacute;nh chim nhiệt huyết kh&aacute;t khao vươn tầm quốc tế. Được cấu th&agrave;nh từ khung kim loại nguy&ecirc;n khối sang trọng, chắc chắn, chế t&aacute;c tinh xảo mang đến cảm gi&aacute;c dễ chịu ch&iacute;nh l&agrave; một trong <strong><a href="https://blog.adayroi.com/5-ly-do-co-nen-mua-vsmart-active-1-khong-va-luu-y-can-biet-khi-dung-d7079" target="_blank">những l&yacute; do bạn n&ecirc;n mua Vsmart Active 1+</a></strong>. Gi&aacute; tham khảo <strong>5.790.000 đồng.</strong></p>
+
+<p style="text-align:justify"><img alt="Vsmart Active 1+ màu hồng được nhiều chị em yêu thích" src="https://cdn02.static-adayroi.com/0/2019/07/15/1563178172253_5078704.jpg" style="width:800px" /></p>
+
+<p style="text-align:center"><em>Vsmart Active 1+ m&agrave;u hồng được nhiều chị em y&ecirc;u th&iacute;ch (Nguồn: fptshop.com.vn)</em></p>
+
+<h3 style="text-align:justify"><strong>2.2. iPhone 7 Plus v&agrave;ng hồng</strong></h3>
+
+<p style="text-align:justify">L&agrave; một trong số những mẫu điện thoại m&agrave;u hồng được y&ecirc;u th&iacute;ch nhất năm 2019, <strong><a href="https://www.adayroi.com/apple-iphone-7-plus-128gb-vang-hong-hang-nhap-khau-p-PRI900993?utm_source=blog_article&utm_medium=referral&utm_campaign=d12635&utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" target="_blank">Apple iPhone 7 plus v&agrave;ng hồng h&agrave;ng nhập khẩu</a></strong> c&oacute; gi&aacute; <strong>13.230.000 đồng</strong> sở hữu k&iacute;ch thước m&agrave;n h&igrave;nh cảm ứng 5.5 inch, chuẩn chống nước v&agrave; chống bụi IP67. V&igrave; thế, bạn c&oacute; thể y&ecirc;n t&acirc;m sử dụng d&ograve;ng điện thoại n&agrave;y ở nhiều điều kiện thời tiết kh&aacute;c nhau.Kh&ocirc;ng những thế, Iphone 7 plus hoạt động tr&ecirc;n hệ điều h&agrave;nh iOS 10 mạnh mẽ, bộ vi xử l&yacute; A10 Fushion hiện đại đem lại rất nhiều tiện &iacute;ch trong sử dụng.</p>
+
+<h3 style="text-align:justify"><strong>2.3. Xiaomi Redmi Note 7 Pro 6GB/128GB Hồng t&iacute;m</strong></h3>
+
+<p style="text-align:justify">Chỉ với <strong>5.250.000 đồng</strong> đặt h&agrave;ng tr&ecirc;n Adayroi, bạn đ&atilde; c&oacute; thể sở hữu <strong><a href="https://www.adayroi.com/xiaomi-redmi-note-7-pro-6gb-128gb-hong-tim-hang-nhap-khau-p-2402724?utm_source=blog_article&utm_medium=referral&utm_campaign=d12635&utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" target="_blank">chiếc điện thoại Xiaomi Redmi Note 7 Pro hồng t&iacute;m s&agrave;nh điệu</a></strong>. Ưu điểm đ&aacute;ng n&oacute;i đầu ti&ecirc;n của d&ograve;ng m&aacute;y n&agrave;y ch&iacute;nh l&agrave; cảm biến 48MP c&oacute; khả năng tập trung điểm ảnh để cho ra đời những bức h&igrave;nh sắc n&eacute;t, sống động ngay cả khi chụp trong điều kiện đ&ecirc;m tối, thiếu s&aacute;ng. M&aacute;y hỗ trợ cổng sạc USB-C nhanh ch&oacute;ng kết hợp với vi&ecirc;n pin 4000mAh dung lượng gi&uacute;p cho thao t&aacute;c m&aacute;y được li&ecirc;n tục, ổn định, kh&ocirc;ng bị gi&aacute;n đoạn giữa chừng.</p>
+
+<p style="text-align:justify"><img alt="Xiaomi Redmi Note 7 Pro 6GB/128GB Hồng tím" src="https://cdn02.static-adayroi.com/0/2019/07/15/1563178172242_1817333.jpg" style="width:800px" /></p>
+
+<p style="text-align:center"><em>Xiaomi Redmi Note 7 Pro 6GB/128GB Hồng t&iacute;m (Nguồn: fptshop.com.vn)</em></p>
+
+<h3 style="text-align:justify"><strong>2.4. Huawei Nova 3e hồng</strong></h3>
+
+<p style="text-align:justify">L&agrave; si&ecirc;u phẩm đ&igrave;nh đ&aacute;m của thương hiệu Huawei, <strong><a href="https://www.adayroi.com/huawei-nova-3e-hong-hang-chinh-hang-p-587694?utm_source=blog_article&utm_medium=referral&utm_campaign=d12635&utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" target="_blank">smartphone Huawei Nova 3e m&agrave;u hồng ch&iacute;nh h&atilde;ng</a></strong> đ&atilde; nắm bắt được xu hướng thiết kế m&agrave;n h&igrave;nh tai thỏ hot nhất hiện nay. M&aacute;y c&oacute; độ ph&acirc;n giải cực sắc n&eacute;t, phối hợp với sự đột ph&aacute; trong trải nghiệm c&ocirc;ng nghệ m&agrave;n h&igrave;nh cảm ứng tạo cảm gi&aacute;c h&agrave;i l&ograve;ng cho người ti&ecirc;u d&ugrave;ng. Gi&aacute; của chiếc m&aacute;y gọn g&agrave;ng n&agrave;y l&agrave; 5.450.000 đồng.</p>
+
+<h3 style="text-align:justify"><strong>2.5. Xiaomi Mi A1 64GB hồng</strong></h3>
+
+<p style="text-align:justify">Một trong những lợi thế tuyệt vời nhất m&agrave; <strong><a href="https://www.adayroi.com/xiaomi-mi-a1-4gb-64gb-hong-hang-chinh-hang-p-2148356?utm_source=blog_article&utm_medium=referral&utm_campaign=d12635&utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" target="_blank">Xiaomi Mi A1 4GB/64GB m&agrave;u hồng dễ thương</a></strong> sở hữu đ&oacute; ch&iacute;nh l&agrave; thiết kế đẹp mắt với khung viền kim loại, bo cong g&oacute;c cạnh tinh tế, mềm mại. Chiếc điện thoại n&agrave;y chỉ mỏng 7.3mm đem lại cảm gi&aacute;c nhẹ nh&agrave;ng, tuyệt vời khi cầm l&ecirc;n tay. Gi&aacute; sản phẩm khoảng tr&ecirc;n <strong>5.000.000 đồng.</strong></p>
+
+<h3 style="text-align:justify"><strong>2.6. Oppo Reno m&agrave;u hồng ngọc trai</strong></h3>
+
+<p style="text-align:justify">Mang hơi hướng thiết kế nh&atilde; nhặn, nhẹ nh&agrave;ng, si&ecirc;u phẩm điện thoại Oppo Reno hồng ngọc trai cực kỳ ph&ugrave; hợp với c&aacute;c t&iacute;n đồ thời trang, nhất l&agrave; c&aacute;c bạn nữ. Sự kết hợp ho&agrave;n hảo giữa m&agrave;u hồng v&agrave; trắng sữa tạo n&ecirc;n điểm thu h&uacute;t ở mặt lưng, đặc biệt l&agrave; khi gặp &aacute;nh s&aacute;ng chiếu v&agrave;o.&nbsp;</p>
+
+<p style="text-align:justify">Điểm cộng của chiếc m&aacute;y n&agrave;y đ&oacute; l&agrave; m&aacute;y được trang bị cổng kết nối USB Type C gi&uacute;p sạc đầy nhanh hơn. M&agrave;n h&igrave;nh Panoramic 6.4 inch, Full HD+ gi&uacute;p người d&ugrave;ng c&oacute; th&ecirc;m kh&ocirc;ng gian trải nghiệm di động đặc sắc, th&uacute; vị hơn. Điểm mạnh kh&ocirc;ng thể kh&ocirc;ng n&oacute;i đến của Oppo Reno gi&aacute; kh&ocirc;ng đổi <strong>12.990.000 đồng</strong> n&agrave;y đ&oacute; l&agrave; camera chất lượng cao, độ ph&acirc;n giải vượt trội v&agrave; khả năng nhận diện khung ảnh tuyệt vời.</p>
+
+<p style="text-align:justify"><img alt="Oppo Reno màu hồng ngọc trai xinh xắn, dễ thương " src="https://cdn02.static-adayroi.com/0/2019/07/15/1563178173181_5942196.jpg" style="width:800px" /></p>
+
+<p style="text-align:center"><em>Oppo Reno m&agrave;u hồng ngọc trai xinh xắn, dễ thương (Nguồn: cellphones.com.vn)</em></p>
+
+<h3 style="text-align:justify"><strong>2.7. Realme 3 m&agrave;u hồng kim cương</strong></h3>
+
+<p style="text-align:justify">Sẽ thật đ&aacute;ng tiếc khi bạn kh&ocirc;ng biết đến chiếc Realme 3 kim cương hồng với mặt lưng dạng sần ho&agrave;n hảo chống b&aacute;m v&acirc;n tay mới mẻ. Thiết kế mới mẻ n&agrave;y sẽ gi&uacute;p cho si&ecirc;u phẩm n&agrave;y nổi bật giữa từng smartphone chạy theo xu hướng mặt k&iacute;nh cường lực. Kh&ocirc;ng những vậy, m&aacute;y hạn chế b&aacute;m dấu v&acirc;n tay n&ecirc;n th&iacute;ch hợp với c&aacute;c n&agrave;ng ra mồ h&ocirc;i tay nhiều hay hậu đậu thường xuy&ecirc;n l&agrave;m rơi m&aacute;y. M&aacute;y c&oacute; m&agrave;n h&igrave;nh 6.2 inch kiểu giọt nước gi&uacute;p bạn xem phim, chơi game thoải m&aacute;i, sảng kho&aacute;i những l&uacute;c rảnh rỗi. Gi&aacute; th&agrave;nh của ch&uacute;ng l&agrave; <strong>3.990.000 đồng.</strong></p>
+
+<p style="text-align:justify">Hy vọng với những chia sẻ ch&acirc;n th&agrave;nh tr&ecirc;n đ&acirc;y, c&aacute;c bạn đ&atilde; chọn cho ri&ecirc;ng m&igrave;nh mẫu điện thoại Samsung m&agrave;u hồng ưng &yacute; v&agrave; tham khảo th&ecirc;m c&aacute;c loại cảm ứng ấn tượng của thương hiệu kh&aacute;c nữa. Đừng ngần ngại đặt h&agrave;ng trực tuyến tại Adayroi.com để sở hữu si&ecirc;u phẩm ch&iacute;nh h&atilde;ng với mức gi&aacute; ph&ugrave; hợp bạn nh&eacute;!</p>
+
+                        <!-- End Nội dung -->
+                    </div>
+                    <script type="application/ld+json">
+                        {
+                        "@context": "http://schema.org",
+                        "@type": "NewsArticle",
+                        "datePublished": "7/15/2019 3:08:00 PM",
+                        "dateModified": "7/15/2019 3:08:00 PM",
+
+                        "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "@id": "https://blog.adayroi.com/5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr-d12635"
+                        },
+
+                        "headline": "5 mẫu điện thoại samsung m&#224;u hồng cảm ứng thời trang gi&#225; từ 5tr",
+
+                        "image": {
+                        "@type": "ImageObject",
+                        "url": "https://cdn02.static-adayroi.com/0/2019/07/15/1563178316768_1022341.jpg",
+                        "height": 240,
+                        "width": 170
+                        },
+
+                        "Author": "Blog Adayroi",
+
+                        "publisher": {
+                        "@type": "Organization",
+                        "name": "Blog Adayroi",
+                        "logo": {
+                        "@type": "ImageObject",
+                        "url": " https://blog.adayroi.com/Content/assets/images/logoblog.png",
+                        "width": 116,
+                        "height": 40
+                        }
+
+                        },
+                        "description": "Điện thoại Samsung màu hồng đang được các nàng bánh bèo rất yêu thích và săn lùng nhằm tạo điểm nhấn nổi bật trong phong cách thời trang cũng như phục vụ cho nhu cầu liên lạc – giải trí. Cùng cập nhật những mẫu điện thoại cảm ứng màu hồng hot hit với ngoại hình sang chảnh, tính năng hiện đại nhé!"
+                        }
+                    </script>
+            </div>
+            <!-- social -->
+            <div class="blog-social">
+                <div style="z-index:9" class="fb-like" data-href="https://blog.adayroi.com/5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr-d12635" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                <div class="fb-share-button" data-href="https://blog.adayroi.com/5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr-d12635" data-layout="button_count"></div>
+                <div class="blog-tumblr">
+                    <a href="https://twitter.com/share" class="twitter-share-button" {count}>Tweet</a>
+                    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+                </div>
+
+            </div>
+            <!-- tags blog -->
+            <div class="other-blog">
+                    <div class="cate-title hidden" id="divCateAdrTitle">
+                        <h2>
+                            <span>XEM TH&#202;M C&#193;C SẢN PHẨM ĐIỆN THOẠI SAMSUNG ĐANG KHUYẾN M&#195;I TẠI ADAYROI</span>
+                        </h2>
+                    </div>
+                <div class="row product-adr">
+
+                </div>
+                <div class="cate-header">
+                    <div class="cate-title">
+                        <h2>
+                            <span>Từ khóa</span>
+                        </h2>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div style="margin-top:4px">
+                    <div class="txt_tag">Tags</div>
+                                <a class="block_tag" href="/samsung-galaxy-note-10-t27405">samsung galaxy note 10</a>
+                                <a class="block_tag" href="/dien-thoai-samsung-mau-hong-t27431">điện thoại samsung m&#224;u hồng</a>
+
+                </div>
+            </div>
+            <!-- comment -->
+            <!-- other blog -->
+            <div class="other-blog">
+
+                <div class="cate-header">
+                    <div class="cate-title">
+                        <h2>
+                            <i class="icon"></i>
+                            <span>Bài viết liên quan</span>
+                        </h2>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="content">
+                            <div class="blog-item">
+                                <a href="/may-suoi-ceramic-korihome-ehk-362-bk-2200w-co-tot-khong-gia-ban-d16622?utm_source=blog_related_post&amp;utm_medium=referral&amp;utm_campaign=d12635&amp;utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" class="thumb">
+                                    <img alt="M&#225;y sưởi Ceramic Korihome EHK-362-BK 2200W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n" src="https://cdn02.static-adayroi.com/resize/160_100/0/2019/11/04/1572862718044_8610821.png">
+                                </a>
+                                <span>
+                                    <a href="/may-suoi-ceramic-korihome-ehk-362-bk-2200w-co-tot-khong-gia-ban-d16622?utm_source=blog_related_post&amp;utm_medium=referral&amp;utm_campaign=d12635&amp;utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" title="M&#225;y sưởi Ceramic Korihome EHK-362-BK 2200W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n" class="title">M&#225;y sưởi Ceramic Korihome EHK-362-BK 2200W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n</a>
+                                </span>
+
+                                <div class="time-post">
+                                    <i class="icon clock"></i> <span>04/11/2019 17:20</span>
+                                </div>
+                            </div>
+                            <div class="blog-item">
+                                <a href="/danh-gia-lo-suoi-saiko-or-5211t-2300w-co-tot-khong-gia-ban-noi-mua-d16620?utm_source=blog_related_post&amp;utm_medium=referral&amp;utm_campaign=d12635&amp;utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" class="thumb">
+                                    <img alt="Đ&#225;nh gi&#225; l&#242; sưởi Saiko OR-5211T 2300W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n, nơi mua" src="https://cdn02.static-adayroi.com/resize/160_100/0/2019/11/04/1572862307704_8256449.png">
+                                </a>
+                                <span>
+                                    <a href="/danh-gia-lo-suoi-saiko-or-5211t-2300w-co-tot-khong-gia-ban-noi-mua-d16620?utm_source=blog_related_post&amp;utm_medium=referral&amp;utm_campaign=d12635&amp;utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" title="Đ&#225;nh gi&#225; l&#242; sưởi Saiko OR-5211T 2300W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n, nơi mua" class="title">Đ&#225;nh gi&#225; l&#242; sưởi Saiko OR-5211T 2300W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n, nơi mua</a>
+                                </span>
+
+                                <div class="time-post">
+                                    <i class="icon clock"></i> <span>04/11/2019 17:09</span>
+                                </div>
+                            </div>
+                                <div class="clearfix"></div>
+                            <div class="blog-item">
+                                <a href="/den-suoi-phong-tam-sunhouse-shd3802-550w-co-tot-khong-gia-ban-d16619?utm_source=blog_related_post&amp;utm_medium=referral&amp;utm_campaign=d12635&amp;utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" class="thumb">
+                                    <img alt="Đ&#232;n sưởi ph&#242;ng tắm Sunhouse SHD3802 550W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n" src="https://cdn02.static-adayroi.com/resize/160_100/0/2019/11/04/1572861644263_8463493.png">
+                                </a>
+                                <span>
+                                    <a href="/den-suoi-phong-tam-sunhouse-shd3802-550w-co-tot-khong-gia-ban-d16619?utm_source=blog_related_post&amp;utm_medium=referral&amp;utm_campaign=d12635&amp;utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" title="Đ&#232;n sưởi ph&#242;ng tắm Sunhouse SHD3802 550W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n" class="title">Đ&#232;n sưởi ph&#242;ng tắm Sunhouse SHD3802 550W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n</a>
+                                </span>
+
+                                <div class="time-post">
+                                    <i class="icon clock"></i> <span>04/11/2019 16:58</span>
+                                </div>
+                            </div>
+                            <div class="blog-item">
+                                <a href="/den-suoi-nha-tam-3-bong-vang-kottmann-k3b-h-co-tot-khong-gia-ban-d16618?utm_source=blog_related_post&amp;utm_medium=referral&amp;utm_campaign=d12635&amp;utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" class="thumb">
+                                    <img alt="Đ&#232;n sưởi nh&#224; tắm 3 b&#243;ng v&#224;ng Kottmann K3B-H c&#243; tốt kh&#244;ng, gi&#225; b&#225;n" src="https://cdn02.static-adayroi.com/resize/160_100/0/2019/11/04/1572861029654_2916890.png">
+                                </a>
+                                <span>
+                                    <a href="/den-suoi-nha-tam-3-bong-vang-kottmann-k3b-h-co-tot-khong-gia-ban-d16618?utm_source=blog_related_post&amp;utm_medium=referral&amp;utm_campaign=d12635&amp;utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" title="Đ&#232;n sưởi nh&#224; tắm 3 b&#243;ng v&#224;ng Kottmann K3B-H c&#243; tốt kh&#244;ng, gi&#225; b&#225;n" class="title">Đ&#232;n sưởi nh&#224; tắm 3 b&#243;ng v&#224;ng Kottmann K3B-H c&#243; tốt kh&#244;ng, gi&#225; b&#225;n</a>
+                                </span>
+
+                                <div class="time-post">
+                                    <i class="icon clock"></i> <span>04/11/2019 16:51</span>
+                                </div>
+                            </div>
+                                <div class="clearfix"></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        <!-- Hot link -->
+        
+    </div>
+    <div class="right-blog">
+
+
+
+
+
+                            <div class="hidden-xs TruocTopTrongTuan banner-mgbt-20 D SOP">
+                                <a href="https://www.adayroi.com/oppo-chinh-hang?utm_source=blog_right_ads&amp;utm_medium=referral&amp;utm_campaign=d12635&amp;utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" target="_blank" title="Điện thoại Oppo ch&#237;nh h&#227;ng - Gi&#225; si&#234;u tốt">
+                                    <img src="https://cdn02.static-adayroi.com/0/2019/10/21/1571626306984_4949686.jpg" alt="Điện thoại Oppo ch&#237;nh h&#227;ng - Gi&#225; si&#234;u tốt" />
+                                </a>
+                            </div>
+                            <div class="visible-xs TruocTopTrongTuan banner-mgbt-20 M SOP">
+                                <a href="https://www.adayroi.com/oppo-chinh-hang?utm_source=blog_right_ads&amp;utm_medium=referral&amp;utm_campaign=d12635&amp;utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" target="_blank" title="Điện thoại Oppo ch&#237;nh h&#227;ng - Gi&#225; si&#234;u tốt">
+                                    <img src="https://cdn02.static-adayroi.com/0/2019/10/21/1571626316654_1920209.jpg" alt="Điện thoại Oppo ch&#237;nh h&#227;ng - Gi&#225; si&#234;u tốt" />
+                                </a>
+                            </div>
+
+
+
+
+
+
+
+        <div class="blog-box">
+            <h2 class="title"><i class="icon"></i><span>TOP TRONG TUẦN</span> </h2>
+            <div class="box-content">
+                <div class="small-item">
+                    <div class="blog-item" style="border-bottom:1px solid #e5e5e5">
+                        <a href="/top-15-dien-thoai-choi-game-tot-nhat-2019-cau-hinh-manh-gia-tu-3tr5-d10344" class="thumb">
+                            <img alt="Top 15 điện thoại chơi game tốt nhất 2019 cấu h&#236;nh mạnh gi&#225; từ 3tr5" src="https://cdn02.static-adayroi.com/resize/270_170/0/2019/06/10/1560141072942_6692593.jpg">
+                        </a>
+                        <span>
+                            <a href="/top-15-dien-thoai-choi-game-tot-nhat-2019-cau-hinh-manh-gia-tu-3tr5-d10344" class="title">Top 15 điện thoại chơi game tốt nhất 2019 cấu h&#236;nh mạnh gi&#225; từ 3tr5</a>
+                        </span>
+                    </div>
+                </div>
+                        <div class="blog-item">
+                            <a href="/2-cach-xoa-icloud-tren-iphone-khi-quen-mat-khau-ios-cuc-de-lam-d5268" class="thumb">
+                                <img alt="2 c&#225;ch x&#243;a iCloud tr&#234;n iPhone khi qu&#234;n mật khẩu iOS cực dễ l&#224;m" src="https://cdn02.static-adayroi.com/resize/100_80/0/2018/10/17/1539767217963_2455361.jpg">
+                            </a>
+                            <span>
+                                <a href="/2-cach-xoa-icloud-tren-iphone-khi-quen-mat-khau-ios-cuc-de-lam-d5268" title="" class="title break-word">2 c&#225;ch x&#243;a iCloud tr&#234;n iPhone khi qu&#234;n mật khẩu iOS cực dễ l&#224;m</a>
+                            </span>
+                        </div>
+                        <div class="blog-item">
+                            <a href="/6-cach-kiem-tra-dien-thoai-samsung-galaxy-chinh-hang-hay-hang-gia-d5855" class="thumb">
+                                <img alt="6 c&#225;ch kiểm tra điện thoại Samsung Galaxy ch&#237;nh h&#227;ng hay h&#224;ng giả" src="https://cdn02.static-adayroi.com/resize/100_80/0/2018/11/27/1543308846535_8491137.jpg">
+                            </a>
+                            <span>
+                                <a href="/6-cach-kiem-tra-dien-thoai-samsung-galaxy-chinh-hang-hay-hang-gia-d5855" title="" class="title break-word">6 c&#225;ch kiểm tra điện thoại Samsung Galaxy ch&#237;nh h&#227;ng hay h&#224;ng giả</a>
+                            </span>
+                        </div>
+                        <div class="blog-item">
+                            <a href="/9-cach-khac-phuc-loi-khong-the-dang-nhap-icloud-tren-iphone-don-gian-d5267" class="thumb">
+                                <img alt="9 c&#225;ch khắc phục lỗi kh&#244;ng thể đăng nhập iCloud tr&#234;n iPhone đơn giản" src="https://cdn02.static-adayroi.com/resize/100_80/0/2018/10/17/1539766902826_3363104.jpg">
+                            </a>
+                            <span>
+                                <a href="/9-cach-khac-phuc-loi-khong-the-dang-nhap-icloud-tren-iphone-don-gian-d5267" title="" class="title break-word">9 c&#225;ch khắc phục lỗi kh&#244;ng thể đăng nhập iCloud tr&#234;n iPhone đơn giản</a>
+                            </span>
+                        </div>
+                        <div class="blog-item">
+                            <a href="/iphone-nuoc-nao-tot-nhat-chon-my-nhat-hongkong-singapore-hay-han-d6072" class="thumb">
+                                <img alt="iPhone nước n&#224;o tốt nhất? Chọn Mỹ, Nhật, Hongkong, Singapore hay H&#224;n" src="https://cdn02.static-adayroi.com/resize/100_80/0/2018/12/11/1544519903965_6963758.jpg">
+                            </a>
+                            <span>
+                                <a href="/iphone-nuoc-nao-tot-nhat-chon-my-nhat-hongkong-singapore-hay-han-d6072" title="" class="title break-word">iPhone nước n&#224;o tốt nhất? Chọn Mỹ, Nhật, Hongkong, Singapore hay H&#224;n</a>
+                            </span>
+                        </div>
+            </div>
+        </div>
+
+
+<div class="blog-box-mobile">
+            <div class="title">
+                <h2>
+                    <a href="">
+                        <i class="icon">T</i>
+                        <span>TOP TRONG TUẦN</span>
+                    </a>
+                </h2>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="content">
+                <div class="card-carousel">
+                    <div class="card-carousel-container">
+                        <div class="card-carousel-wrapper">
+                                    <div class="card-carousel-item col-xs-6">
+                                        <a title="Top 15 điện thoại chơi game tốt nhất 2019 cấu h&#236;nh mạnh gi&#225; từ 3tr5" href="/top-15-dien-thoai-choi-game-tot-nhat-2019-cau-hinh-manh-gia-tu-3tr5-d10344" class="thumbnail">
+                                            <div class="thumb-wrapper">
+                                                <img src="https://cdn02.static-adayroi.com/resize/160_100/0/2019/06/10/1560141072942_6692593.jpg" alt="Top 15 điện thoại chơi game tốt nhất 2019 cấu h&#236;nh mạnh gi&#225; từ 3tr5">
+                                            </div>
+                                            <div class="caption">
+                                                <h3 class="card-carousel-item-title">Top 15 điện thoại chơi game tốt nhất 2019 cấu h&#236;nh mạnh gi&#225; từ 3tr5</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="card-carousel-item col-xs-6">
+                                        <a title="2 c&#225;ch x&#243;a iCloud tr&#234;n iPhone khi qu&#234;n mật khẩu iOS cực dễ l&#224;m" href="/2-cach-xoa-icloud-tren-iphone-khi-quen-mat-khau-ios-cuc-de-lam-d5268" class="thumbnail">
+                                            <div class="thumb-wrapper">
+                                                <img src="https://cdn02.static-adayroi.com/resize/160_100/0/2018/10/17/1539767217963_2455361.jpg" alt="2 c&#225;ch x&#243;a iCloud tr&#234;n iPhone khi qu&#234;n mật khẩu iOS cực dễ l&#224;m">
+                                            </div>
+                                            <div class="caption">
+                                                <h3 class="card-carousel-item-title">2 c&#225;ch x&#243;a iCloud tr&#234;n iPhone khi qu&#234;n mật khẩu iOS cực dễ l&#224;m</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="card-carousel-item col-xs-6">
+                                        <a title="6 c&#225;ch kiểm tra điện thoại Samsung Galaxy ch&#237;nh h&#227;ng hay h&#224;ng giả" href="/6-cach-kiem-tra-dien-thoai-samsung-galaxy-chinh-hang-hay-hang-gia-d5855" class="thumbnail">
+                                            <div class="thumb-wrapper">
+                                                <img src="https://cdn02.static-adayroi.com/resize/160_100/0/2018/11/27/1543308846535_8491137.jpg" alt="6 c&#225;ch kiểm tra điện thoại Samsung Galaxy ch&#237;nh h&#227;ng hay h&#224;ng giả">
+                                            </div>
+                                            <div class="caption">
+                                                <h3 class="card-carousel-item-title">6 c&#225;ch kiểm tra điện thoại Samsung Galaxy ch&#237;nh h&#227;ng hay h&#224;ng giả</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="card-carousel-item col-xs-6">
+                                        <a title="9 c&#225;ch khắc phục lỗi kh&#244;ng thể đăng nhập iCloud tr&#234;n iPhone đơn giản" href="/9-cach-khac-phuc-loi-khong-the-dang-nhap-icloud-tren-iphone-don-gian-d5267" class="thumbnail">
+                                            <div class="thumb-wrapper">
+                                                <img src="https://cdn02.static-adayroi.com/resize/160_100/0/2018/10/17/1539766902826_3363104.jpg" alt="9 c&#225;ch khắc phục lỗi kh&#244;ng thể đăng nhập iCloud tr&#234;n iPhone đơn giản">
+                                            </div>
+                                            <div class="caption">
+                                                <h3 class="card-carousel-item-title">9 c&#225;ch khắc phục lỗi kh&#244;ng thể đăng nhập iCloud tr&#234;n iPhone đơn giản</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="card-carousel-item col-xs-6">
+                                        <a title="iPhone nước n&#224;o tốt nhất? Chọn Mỹ, Nhật, Hongkong, Singapore hay H&#224;n" href="/iphone-nuoc-nao-tot-nhat-chon-my-nhat-hongkong-singapore-hay-han-d6072" class="thumbnail">
+                                            <div class="thumb-wrapper">
+                                                <img src="https://cdn02.static-adayroi.com/resize/160_100/0/2018/12/11/1544519903965_6963758.jpg" alt="iPhone nước n&#224;o tốt nhất? Chọn Mỹ, Nhật, Hongkong, Singapore hay H&#224;n">
+                                            </div>
+                                            <div class="caption">
+                                                <h3 class="card-carousel-item-title">iPhone nước n&#224;o tốt nhất? Chọn Mỹ, Nhật, Hongkong, Singapore hay H&#224;n</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+        <div class="blog-box">
+            <h2 class="title"><i class="icon"></i><span>BÀI VIẾT NỔI BẬT</span> </h2>
+            <div class="box-content">
+                <div class="small-item">
+                    <div class="blog-item" style="border-bottom:1px solid #e5e5e5">
+                        <a href="/may-suoi-ceramic-korihome-ehk-362-bk-2200w-co-tot-khong-gia-ban-d16622" class="thumb">
+                            <img alt="M&#225;y sưởi Ceramic Korihome EHK-362-BK 2200W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n" src="https://cdn02.static-adayroi.com/resize/270_170/0/2019/11/04/1572862718044_8610821.png">
+                        </a>
+                        <span>
+                            <a href="/may-suoi-ceramic-korihome-ehk-362-bk-2200w-co-tot-khong-gia-ban-d16622" class="title">M&#225;y sưởi Ceramic Korihome EHK-362-BK 2200W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n</a>
+                        </span>
+                    </div>
+                </div>
+                    <div class="blog-item">
+                        <a href="/danh-gia-lo-suoi-saiko-or-5211t-2300w-co-tot-khong-gia-ban-noi-mua-d16620" class="thumb">
+                            <img alt="Đ&#225;nh gi&#225; l&#242; sưởi Saiko OR-5211T 2300W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n, nơi mua" src="https://cdn02.static-adayroi.com/resize/100_80/0/2019/11/04/1572862307704_8256449.png">
+                        </a>
+                        <span>
+                            <a href="/danh-gia-lo-suoi-saiko-or-5211t-2300w-co-tot-khong-gia-ban-noi-mua-d16620" title="" class="title break-word">Đ&#225;nh gi&#225; l&#242; sưởi Saiko OR-5211T 2300W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n, nơi mua</a>
+                        </span>
+                    </div>
+                    <div class="blog-item">
+                        <a href="/den-suoi-phong-tam-sunhouse-shd3802-550w-co-tot-khong-gia-ban-d16619" class="thumb">
+                            <img alt="Đ&#232;n sưởi ph&#242;ng tắm Sunhouse SHD3802 550W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n" src="https://cdn02.static-adayroi.com/resize/100_80/0/2019/11/04/1572861644263_8463493.png">
+                        </a>
+                        <span>
+                            <a href="/den-suoi-phong-tam-sunhouse-shd3802-550w-co-tot-khong-gia-ban-d16619" title="" class="title break-word">Đ&#232;n sưởi ph&#242;ng tắm Sunhouse SHD3802 550W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n</a>
+                        </span>
+                    </div>
+                    <div class="blog-item">
+                        <a href="/den-suoi-nha-tam-3-bong-vang-kottmann-k3b-h-co-tot-khong-gia-ban-d16618" class="thumb">
+                            <img alt="Đ&#232;n sưởi nh&#224; tắm 3 b&#243;ng v&#224;ng Kottmann K3B-H c&#243; tốt kh&#244;ng, gi&#225; b&#225;n" src="https://cdn02.static-adayroi.com/resize/100_80/0/2019/11/04/1572861029654_2916890.png">
+                        </a>
+                        <span>
+                            <a href="/den-suoi-nha-tam-3-bong-vang-kottmann-k3b-h-co-tot-khong-gia-ban-d16618" title="" class="title break-word">Đ&#232;n sưởi nh&#224; tắm 3 b&#243;ng v&#224;ng Kottmann K3B-H c&#243; tốt kh&#244;ng, gi&#225; b&#225;n</a>
+                        </span>
+                    </div>
+                    <div class="blog-item">
+                        <a href="/den-suoi-nha-tam-3-bong-kohn-kn03g-825w-co-tot-khong-gia-ban-d16617" class="thumb">
+                            <img alt="Đ&#232;n sưởi nh&#224; tắm 3 b&#243;ng Kohn KN03G 825W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n" src="https://cdn02.static-adayroi.com/resize/100_80/0/2019/11/04/157286021535_4559832.png">
+                        </a>
+                        <span>
+                            <a href="/den-suoi-nha-tam-3-bong-kohn-kn03g-825w-co-tot-khong-gia-ban-d16617" title="" class="title break-word">Đ&#232;n sưởi nh&#224; tắm 3 b&#243;ng Kohn KN03G 825W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n</a>
+                        </span>
+                    </div>
+            </div>
+        </div>
+
+
+
+<div class="blog-box-mobile">
+            <div class="title">
+                <h2>
+                    <a href="">
+                        <i class="icon">T</i>
+                        <span>BÀI VIẾT NỔI BẬT</span>
+                    </a>
+                </h2>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="content">
+                <div class="card-carousel">
+                    <div class="card-carousel-container">
+                        <div class="card-carousel-wrapper">
+                                <div class="card-carousel-item col-xs-6">
+                                    <a title="M&#225;y sưởi Ceramic Korihome EHK-362-BK 2200W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n" href="/may-suoi-ceramic-korihome-ehk-362-bk-2200w-co-tot-khong-gia-ban-d16622" class="thumbnail">
+                                        <div class="thumb-wrapper">
+                                            <img src="https://cdn02.static-adayroi.com/resize/160_100/0/2019/11/04/1572862718044_8610821.png" alt="M&#225;y sưởi Ceramic Korihome EHK-362-BK 2200W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n">
+                                        </div>
+                                        <div class="caption">
+                                            <h3 class="card-carousel-item-title">M&#225;y sưởi Ceramic Korihome EHK-362-BK 2200W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-carousel-item col-xs-6">
+                                    <a title="Đ&#225;nh gi&#225; l&#242; sưởi Saiko OR-5211T 2300W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n, nơi mua" href="/danh-gia-lo-suoi-saiko-or-5211t-2300w-co-tot-khong-gia-ban-noi-mua-d16620" class="thumbnail">
+                                        <div class="thumb-wrapper">
+                                            <img src="https://cdn02.static-adayroi.com/resize/160_100/0/2019/11/04/1572862307704_8256449.png" alt="Đ&#225;nh gi&#225; l&#242; sưởi Saiko OR-5211T 2300W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n, nơi mua">
+                                        </div>
+                                        <div class="caption">
+                                            <h3 class="card-carousel-item-title">Đ&#225;nh gi&#225; l&#242; sưởi Saiko OR-5211T 2300W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n, nơi mua</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-carousel-item col-xs-6">
+                                    <a title="Đ&#232;n sưởi ph&#242;ng tắm Sunhouse SHD3802 550W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n" href="/den-suoi-phong-tam-sunhouse-shd3802-550w-co-tot-khong-gia-ban-d16619" class="thumbnail">
+                                        <div class="thumb-wrapper">
+                                            <img src="https://cdn02.static-adayroi.com/resize/160_100/0/2019/11/04/1572861644263_8463493.png" alt="Đ&#232;n sưởi ph&#242;ng tắm Sunhouse SHD3802 550W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n">
+                                        </div>
+                                        <div class="caption">
+                                            <h3 class="card-carousel-item-title">Đ&#232;n sưởi ph&#242;ng tắm Sunhouse SHD3802 550W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-carousel-item col-xs-6">
+                                    <a title="Đ&#232;n sưởi nh&#224; tắm 3 b&#243;ng v&#224;ng Kottmann K3B-H c&#243; tốt kh&#244;ng, gi&#225; b&#225;n" href="/den-suoi-nha-tam-3-bong-vang-kottmann-k3b-h-co-tot-khong-gia-ban-d16618" class="thumbnail">
+                                        <div class="thumb-wrapper">
+                                            <img src="https://cdn02.static-adayroi.com/resize/160_100/0/2019/11/04/1572861029654_2916890.png" alt="Đ&#232;n sưởi nh&#224; tắm 3 b&#243;ng v&#224;ng Kottmann K3B-H c&#243; tốt kh&#244;ng, gi&#225; b&#225;n">
+                                        </div>
+                                        <div class="caption">
+                                            <h3 class="card-carousel-item-title">Đ&#232;n sưởi nh&#224; tắm 3 b&#243;ng v&#224;ng Kottmann K3B-H c&#243; tốt kh&#244;ng, gi&#225; b&#225;n</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-carousel-item col-xs-6">
+                                    <a title="Đ&#232;n sưởi nh&#224; tắm 3 b&#243;ng Kohn KN03G 825W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n" href="/den-suoi-nha-tam-3-bong-kohn-kn03g-825w-co-tot-khong-gia-ban-d16617" class="thumbnail">
+                                        <div class="thumb-wrapper">
+                                            <img src="https://cdn02.static-adayroi.com/resize/160_100/0/2019/11/04/157286021535_4559832.png" alt="Đ&#232;n sưởi nh&#224; tắm 3 b&#243;ng Kohn KN03G 825W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n">
+                                        </div>
+                                        <div class="caption">
+                                            <h3 class="card-carousel-item-title">Đ&#232;n sưởi nh&#224; tắm 3 b&#243;ng Kohn KN03G 825W c&#243; tốt kh&#244;ng, gi&#225; b&#225;n</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+        <div class="blog-box">
+            <div class="box-content">
+                <div class="fb-page" data-href="https://www.facebook.com/Adayroicom-939777419366417/?fref=ts" data-width="238" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
+
+            </div>
+        </div>
+        <div class="blog-box right-blog-banner">
+            <div class="box-content">
+            <a href="https://www.adayroi.com/uu-dai-app-lp1624?utm_source=blog_sidebar_banner&amp;utm_medium=referral&amp;utm_campaign=d12635&amp;utm_term=5-mau-dien-thoai-samsung-mau-hong-cam-ung-thoi-trang-gia-tu-5tr" target="_blank" title="Tải app Adayroi nhận ngay ưu đãi độc quyền - Mua sắm 24/7 nhanh chóng tiện lợi. Tải ngay">
+                <img src="https://media-ak.static-adayroi.com/sys_master/landing/smashgiftbox/Blog_Tải App.png" alt="Tải app Adayroi nhận ngay ưu đãi độc quyền - Mua sắm 24/7 nhanh chóng tiện lợi. Tải ngay" />
+            </a>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <script src="https://media-ak.static-adayroi.com/sys_master/images/banner/js/landing-page.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+                    
+                </div>
+            </div>
+
+            <div class="a-footer">
+                <div class="top-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-3 border-right height first-col">
+                                <div class="block-footer clearfix">
+                                    <h3 class="text-uppercase text-bold">Adayroi</h3>
+                                    <ul class="list-unstyled">
+                                        <li><a href="https://www.adayroi.com/help/gioi-thieu?utm_source=blog_footer" title="Giới thiệu về Adayroi" rel="nofollow">Giới thiệu về Adayroi</a></li>
+                                        <li><a href="https://www.adayroi.com/ma-giam-gia?ref=subpage_footer&utm_source=blog_footer" title="Mã giảm giá Adayroi - Nhiều chương trình khuyến mãi và ưu đãi lớn">Mã giảm giá Adayroi</a></li>
+                                        <li><a href="https://www.adayroi.com/help/quy-che-hoat-dong?utm_source=blog_footer" title="Quy chế hoạt động Sàn TMĐT" rel="nofollow">Quy chế hoạt động Sàn TMĐT</a></li>
+                                        <li><a href="https://www.adayroi.com/help/dieu-khoan-dieu-kien?utm_source=blog_footer" title="Điều khoản và điều kiện giao dịch" rel="nofollow">Điều khoản và điều kiện giao dịch</a></li>
+                                        <li><a href="https://cdn02.static-adayroi.com/0/2016/04/02/1459562286124_4339455.pdf?_ga=1.81625247.920151379.1438916670?utm_source=blog_footer" rel="nofollow" title="Cơ hội nghề nghiệp">Thông báo từ Adayroi</a></li>
+                                        <li><a href="https://www.adayroi.com/help/lien-he?utm_source=blog_footer" title="Liên hệ với Adayroi" rel="nofollow">Liên hệ với Adayroi</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 border-right height">
+                                <div class="block-footer clearfix">
+                                    <h3 class="text-uppercase text-bold">chăm sóc khách hàng</h3>
+                                    <ul class="list-unstyled">
+                                        <li><a href="https://www.adayroi.com/help/trung-tam-ho-tro-khach-hang?utm_source=blog_footer" title="Trung tâm hỗ trợ khách hàng" rel="nofollow">Trung tâm hỗ trợ khách hàng</a></li>
+                                        <li><a href="https://www.adayroi.com" title="Kiểm tra đơn hàng?utm_source=blog_footer" rel="nofollow">Kiểm tra đơn hàng</a></li>
+                                        <li><a href="https://www.adayroi.com/help/chinh-sach-bao-mat-thanh-toan?utm_source=blog_footer" title="Chính sách bảo mật thanh toán" rel="nofollow">Chính sách bảo mật thanh toán</a></li>
+                                        <li><a href="https://www.adayroi.com/help/chinh-sach-dinh-danh-khach-hang?utm_source=blog_footer" title="Chính sách định danh khách hàng" rel="nofollow">Chính sách định danh khách hàng</a></li>
+                                        <li><a href="https://www.adayroi.com/help/chinh-sach-thanh-toan?utm_source=blog_footer" title="Chính sách thanh toán" rel="nofollow">Chính sách thanh toán</a></li>
+                                        <li><a href="https://www.adayroi.com/help/chinh-sach-giao-hang?utm_source=blog_footer" title="Chính sách giao hàng" rel="nofollow">Chính sách giao hàng</a></li>
+                                        <li><a href="https://www.adayroi.com/help/chinh-sach-doi-tra?utm_source=blog_footer" title="Chính sách đổi trả" rel="nofollow">Chính sách đổi trả</a></li>
+                                        <li><a href="https://www.adayroi.com/help/chinh-sach-bao-hanh?utm_source=blog_footer" title="Chính sách bảo hành" rel="nofollow">Chính sách bảo hành</a></li>
+                                        <li><a href="https://www.adayroi.com/sell-with-us-sl70?utm_source=blog_footer" title="Đăng ký mở gian hàng" rel="nofollow">Đăng ký mở gian hàng</a></li>
+                                        <li><a href="https://www.adayroi.com/help/nhung-cau-hoi-thuong-gap?utm_source=blog_footer" title="Câu hỏi thường gặp" rel="nofollow">Câu hỏi thường gặp</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 border-right height">
+                                <div class="block-footer clearfix">
+                                    <h3 class="text-uppercase text-bold">tài khoản</h3>
+                                    <ul class="list-unstyled">
+                                        <li><a href="https://www.adayroi.com?utm_source=blog_footer" title="Đăng nhập" rel="nofollow">Đăng nhập</a></li>
+                                        <li><a href="https://www.adayroi.com?utm_source=blog_footer" title="Đăng ký" rel="nofollow">Đăng ký</a></li>
+                                        <li><a href="https://www.adayroi.com/help/chinh-sach-bao-mat-thong-tin?utm_source=blog_footer" title="Chính sách bảo mật và chia sẻ thông tin" rel="nofollow">Chính sách bảo mật và chia sẻ thông tin</a></li>
+                                    </ul>
+                                </div>
+                                <div class="block-footer clearfix">
+                                    <h3 class="text-uppercase text-bold">Liên kết Website</h3>
+                                    <div style="padding-right: 5px; padding-left: 5px;" class="container-fluid">
+                                        <div style="margin-left: -15px; margin-right: -15px;" class="row">
+                                            <div class="col-xs-6">
+                                                <ul class="list-unstyled">
+                                                    <li><a href="http://vinhomes.vn?utm_source=blog_footer" rel="nofollow" target="_blank" title="VinHomes">Vinhomes</a></li>
+                                                    <li><a href="https://www.adayroi.com/vinmart?utm_source=blog_footer" rel="nofollow" target="_blank" title="VinMart">VinMart</a></li>
+                                                    <li><a href="http://vinmec.com?utm_source=blog_footer" rel="nofollow" target="_blank" title="Vinmec">Vinmec</a></li>
+                                                    <li><a href="http://vinpearl.com?utm_source=blog_footer" rel="nofollow" target="_blank" title="Vinpearl">Vinpearl</a></li>
+                                                    <li><a href="http://vinhomesriverside.com?utm_source=blog_footer" rel="nofollow" target="_blank" title="Vinhomes Riverside">Vinhomes Riverside</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <ul class="list-unstyled">
+                                                    <li><a href="http://www.almaz.vn?utm_source=blog_footer" rel="nofollow" target="_blank" title="Almaz">Almaz</a></li>
+                                                    <li><a href="http://vinclub.vn?utm_source=blog_footer" rel="nofollow" target="_blank" title="Vinclub">Vinclub</a></li>
+                                                    <li><a href="https://www.adayroi.com/vinpro?utm_source=blog_footer" rel="nofollow" target="_blank" title="VinPro">VinPro</a></li>
+                                                    <li><a href="http://vinpearlland.com?utm_source=blog_footer" rel="nofollow" target="_blank" title="Vinpearl Land">Vinpearl Land</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 last-col">
+                                <div class="block-footer clearfix no-margin">
+                                    <h3 class="text-uppercase text-bold">Được chứng nhận</h3>
+                                    <div>
+                                        <a target="_blank" href="http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=21352" rel="nofollow"><img alt="Đã đăng ký với bộ công thương" src="/Content/assets/images/bo-cong-thuong.da-dang-ky.png"></a>
+                                    </div>
+                                    <div>
+                                        <a href="//www.dmca.com/Protection/Status.aspx?ID=0ef1664a-803b-4836-ad79-bf6acca8763b" title="DMCA.com Protection Status" class="dmca-badge">
+                                            <img src="https://images.dmca.com/Badges/dmca_protected_16_120.png?ID=0ef1664a-803b-4836-ad79-bf6acca8763b" alt="DMCA.com Protection Status" style="padding-left:4px" />
+                                        </a>
+                                        <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- top footer -->
+                <div class="bottom-footer">
+                    <div class="container">
+                        <div class="block-footer clearfix info no-margin no-padding">
+                            <h3 class="text-uppercase text-bold">CÔNG TY CỔ PHẦN DỊCH VỤ THƯƠNG MẠI TỔNG HỢP VINCOMMERCE</h3>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h6 class="text-uppercase text-bold">Trụ sở chính:</h6>
+                                    <p>Số 72 Lê Thánh Tôn, Phường Bến Nghé, Quận 1, <br>Thành phố Hồ Chí Minh, Việt Nam.</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <h6 class="text-uppercase text-bold">Địa chỉ giao dịch:</h6>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <span class="color-text-strong text-bold">Tại thành phố Hồ Chí Minh:</span>
+                                            <p>Tầng 15, Vincom Center Đồng Khởi, 72 Lê Thánh Tôn, Phường Bến Nghé, Quận 1, Thành Phố Hồ Chí Minh.</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <span class="color-text-strong text-bold">Tại Hà Nội:</span>
+                                            <p>Tower 2, Times City, 458 Minh Khai, Phường Vĩnh Tuy,<br> Quận Hai Bà Trưng, Thành Phố Hà Nội.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- bottom footer -->
+            </div>
+
+            <div class="footer-mobile">
+                <div class="mobile-facebook"></div>
+                <div class="copy-info"><strong>BLOG ADAYROI</strong> <br /> Trang blog tổng hợp của <a href="https://www.adayroi.com" rel="nofollow">Adayroi.com</a></div>
+                        <br />
+                        <div style="text-align:center">
+            <a href="https://www.adayroi.com/uu-dai-app-lp1624?" target="_blank" title="Tải app Adayroi nhận ngay ưu đãi độc quyền - Mua sắm 24/7 nhanh chóng tiện lợi. Tải ngay">
+                <img src="https://media-ak.static-adayroi.com/sys_master/landing/smashgiftbox/Blog_Tải App.png" alt="Tải app Adayroi nhận ngay ưu đãi độc quyền - Mua sắm 24/7 nhanh chóng tiện lợi. Tải ngay" />
+            </a>
+
+
+                        </div>
+
+
+                <br />
+                <div class="company-info" style="text-align:center">
+                    <div class="fb-page" data-href="https://www.facebook.com/Adayroicom-939777419366417/?fref=ts" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/Content/js/vendors.js?v=1.0" type="text/javascript" charset="utf-8"></script>
+    <script src="/Content/js/main.js?v=20190601" type="text/javascript" charset="utf-8"></script>
+
+
+    
+
+        <script src="/content/js/detail.js" type="text/javascript"></script>
+        <script src="/content/js/swiper/swiper.min.js" type="text/javascript"></script>
+        <script src="/content/js/jquery.lazyload.min.js" type="text/javascript"></script>
+        <!-- Facebook Pixel Code -->
+        <script>
+    !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+            n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '766963776744234');
+    fbq('track', 'ViewContent', {
+        content_brand: '',
+        content_category: 'Blog/Công Nghệ/Điện Thoại',
+        content_name: '5 mẫu điện thoại samsung màu hồng cảm ứng thời trang giá từ 5tr',
+        content_type: 'blog',
+        content_ids: '12635'
+    });
+        </script>
+        <!-- End Facebook Pixel Code -->
+
+        <script type="text/javascript">
+            var certona = {
+                devicetype: isMobile() ? "MOBILE" : "DESKTOP",
+                pagetype: "BLOGDETAIL",
+                recommendations: true,
+                "itemid" : "",
+                "parentcategory": "",
+                "category":"",
+                "subcategory": "",
+                "sub3category":"",
+                "sub4category": "",
+                "sub5category": "",
+                "sub6category":"",
+            };
+        </script>
+    
+
+</body>
+
+</html>

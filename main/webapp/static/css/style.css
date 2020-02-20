@@ -1,0 +1,15 @@
+.estore{
+   height:150px !important;
+   max-width: 100%;
+}
+.thumbnail{
+background-color: Beige !importain;
+}
+.estore1{
+   height:70px !important;
+   width: 70px;
+   border-radius:5px;
+   padding: 3px;
+   box-shadow: 0px 0px 2px blue;
+}
+
